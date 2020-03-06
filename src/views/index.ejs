@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+
+<% if (entries.length){ %>
+
+    <% entries.forEach(function (entry){ %>
+        <div class="col-md-4 offset-md-4">
+            <div class="card my-2">
+                <div class="card-header bg-primary text-white">
+                    <h1><%= entry.title %></h1>
+                </div>
+                <div class="card-body">
+                    <p><%= entry.body %></p>
+                </div>
+                <div class="card-footer bg-primary text-white">
+                    <p><%= entry.published %></p>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+<% } else { %>
+
+    <div class="col-md-4 offset-md-4 mt-5">
+        <h2 class="text-center">No entries! <a href="/new-entry" class="btn btn-secondary">Add One!</a></h2>
+    </div>
+
+<% } %>
+
+<%- include('partials/footer') %>
